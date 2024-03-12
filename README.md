@@ -64,7 +64,8 @@ pipeline {
         
         stage('build') {
             steps {
-                 sh 'az login  --tenant d95caa7c-2879-4215-9f09-161979a6d611'
+                //  sh 'az login  --tenant d95caa7c-2879-4215-9f09-161979a6d611'
+                sh 'az login --use-device-code'
               }
         }
         stage('Terraform Init') {
@@ -88,6 +89,12 @@ pipeline {
                 script {
                     sh "terraform apply --auto-approve"
                 }
+            }
+        }
+        
+        stage('Terraform action') {
+            steps {
+                sh 'terraform ${action} --auto-approve'
             }
         }
     }
