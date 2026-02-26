@@ -25,7 +25,7 @@ terraform import azurerm_network_interface.main /subscriptions/eac5c2b6-c759-4a8
 
 
 ###########################################################################################
-this is to create a storage account using azure cli 
+# this is to create a storage account using azure cli 
 ###########################################################################################
 
 RESOURCE_GROUP_NAME=tstaterg
@@ -45,7 +45,8 @@ ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --account-key $ACCOUNT_KEY
 
 
-
+################################################################################
+# this pipeline can live in jenkins as a declarative pipeline
 #################################################################################
 pipeline {
     agent any
