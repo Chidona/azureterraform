@@ -48,6 +48,8 @@ az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOU
 ################################################################################
 # this pipeline can live in jenkins as a declarative pipeline
 #################################################################################
+
+
 pipeline {
     agent any
     
